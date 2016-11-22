@@ -55,7 +55,8 @@ border-left:10px solid #FFD39B;
 <body>
 <ul id="menu">
 <a href="<?= "INCOMPLETO" ?>"><?= "Exibir escala" ?></a><br><hr>
-<a href="<?= "INCOMPLETO" ?>"><?= "Exibir relatório" ?></a>
+<a href="<?= "INCOMPLETO" ?>"><?= "Exibir relatório" ?></a><br>
+<a href="<?= "logout.php" ?>"><?= "Sair" ?></a>
 </ul>
 </body>
 </html>

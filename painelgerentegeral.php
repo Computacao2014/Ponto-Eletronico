@@ -55,6 +55,8 @@ border-left:10px solid #FFD39B;
 <body>
 <ul id="menu">
 <a href="<?= "cadastroGerenteSetor.php" ?>"><?= "Cadastrar Gerente de Setor" ?></a>
+<br>
+<a href="<?= "logout.php" ?>"><?= "Sair" ?></a>
 </ul>
 </body>
 </html>

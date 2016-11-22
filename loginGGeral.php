@@ -14,38 +14,36 @@ define("Tiluto", "Primeira constante");
 			font-size: 26px;
 		}
 		fieldset{
-			width: 400px;
-			position: static;
-			background-color: purple ;
-			border-style: outset;
-			border-left-color: rgb(123,154,111);
-			margin-left: 350px;
+			width: 150px;
+			//margin: 200px;
+			margin-left: 530px;
+			margin-top: 100px;
+			border-radius: 15px ;
+			background-color: white;
+
 		}
 		html{
 			
-			background-image: linear-gradient(135deg, white, blue);
+			background-color: rgb(150,150,255);
 		}
+		
 	</style>
+	<br><br>
+	<img src="imagens/logouespi.png">
+	<hr>
 </head>
 
 <body>
-	<h1><a href="<?= "http://www.uespi.br/site/" ?>"><?= "Uespi" ?></a></h1> 
-
-
-
-	<hr>
-	<h3>Ponto Eletronico Gerente Geral:</h3>
-	
-	<hr>
-	
 	<form method="post" action="userautenticGGeral.php">
 		<fieldset>
-			
+		<center>
+		<img src='imagens/imgponto.png'><br><hr>	
 		Matricula: <input type="text" name="matricula">
 		<br>
 		Senha: <input type="password" name="senha"> 
 		<br>
 		<input type="submit">
+		</center>
 		</fieldset>
 	</form>
 
