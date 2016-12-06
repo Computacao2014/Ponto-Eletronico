@@ -35,13 +35,13 @@
 		<input type="password" name="senha" required=""> 
 
 		<label>Email:</label>
-		<input pattern="^[A-Za-z0-9_]{1,15}@[A-Za-z0-9_]{1,15}$" type="text" name="email" required="">
+		<input pattern="^[A-Za-z0-9_]{1,15}@[A-Za-z0-9_]{1,15}.[A-Za-z0-9_]{1,10}$" type="text" name="email" required="">
 		
 		<label>Rg:</label>
-		<input pattern="^[0-9]{1,15}$" type="text" name="rg" required="">
-
+		<input pattern="^[0-9]{7}$" type="text" name="rg" required="">
+		
 		<label>Cpf:</label>
-		<input pattern="^[0-9]{1,15}$" type="text" name="cpf" required="">
+		<input pattern="^[0-9]{11}$" type="text" name="cpf" required="">
 
 		<label>Telefone:</label>
 		<input pattern="^[0-9]{1,15}$" type="text" name="telefone" required="">

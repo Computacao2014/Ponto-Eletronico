@@ -56,6 +56,8 @@ border-left:10px solid #FFD39B;
 <ul id="menu">
 <a href="<?= "cadastrofuncinario.php" ?>"><?= "Cadastrar funcionario" ?></a><br>
 <a href="<?= "logout.php" ?>"><?= "Sair" ?></a>
+<br>
+<a href="<?= "testeread.php" ?>"><?= "Listar Funcionarios" ?></a>
 </ul>
 </body>
 </html>

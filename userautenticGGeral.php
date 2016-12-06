@@ -13,10 +13,10 @@ mysqli_select_db($conexao , $banco) or die("erro no banco");
 
 	<script type="text/javascript">
 	function loginsuccessfully(){
-		setTimeout("window.location='painelgerentegeral.php'",5000);
+		setTimeout("window.location='painelgerentegeral.php'",1000);
 	}
 	function loginfail(){
-		setTimeout("window.location='loginGGeral.php'",5000);
+		setTimeout("window.location='loginGGeral.php'",1000);
 	}
 	</script>
 </head>

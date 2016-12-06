@@ -9,6 +9,7 @@ define("Tiluto", "Primeira constante");
 		fieldset input{
 			width: 100%;
 			margin-bottom: 10px;
+			background-color: rgb(150,150,255);
 		}
 		fieldset legend{
 			font-size: 26px;
@@ -26,6 +27,7 @@ define("Tiluto", "Primeira constante");
 			
 			background-color: rgb(150,150,255);
 		}
+
 		
 	</style>
 	<br><br>
@@ -38,9 +40,9 @@ define("Tiluto", "Primeira constante");
 		<fieldset>
 		<center>
 		<img src='imagens/imgponto.png'><br><hr>	
-		Matricula: <input type="text" name="matricula">
+		Matricula: <input type="text" name="matricula" required="">
 		<br>
-		Senha: <input type="password" name="senha"> 
+		Senha: <input type="password" name="senha" required=""> 
 		<br>
 		<input type="submit">
 		</center>

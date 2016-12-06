@@ -11,6 +11,7 @@ define("Tiluto", "Primeira constante");
 		fieldset input{
 			width: 100%;
 			margin-bottom: 10px;
+			background-color: rgb(150,150,255);
 		}
 		fieldset legend{
 			font-size: 26px;
@@ -41,9 +42,9 @@ define("Tiluto", "Primeira constante");
 		<fieldset>
 		<center>	
 		<img src='imagens/imgponto.png'>	
-		Cpf: <input type="text" name="cpf">
+		Cpf: <input type="text" name="cpf" required="">
 		<br>
-		Senha: <input type="password" name="senha"> 
+		Senha: <input type="password" name="senha" required=""> 
 		<br>
 		<input type="submit">
 		</center>
