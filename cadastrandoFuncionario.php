@@ -1,34 +1,43 @@
 <html>
 <head>
-	<title>Cadastrando Funcionario...</title>
+	<title>Cadastrando...</title>
 </head>
 <body>
 <?php 
-$host = "localhost";
-$user = "root";
-$pass = "php2016";
-$banco = "pontoeletronico";
-$conexao = mysqli_connect($host , $user , $pass) or die(mysql_error());
-mysqli_select_db($conexao , $banco) or die("erro no banco"); 
+include("Funcionario.php");
  ?>
 
 <?php 
-$nome = $_POST['nome'];
-$cpf = $_POST['cpf'];
-$rg = $_POST['rg'];
-$email = $_POST['email'];
-$senha = $_POST['senha'];
-$telefone = $_POST['telefone'];
-$idSetor = $_POST['idSetor'];
-$funcao = $_POST['funcao'];
-$hrsemanais = $_POST['hrsemanais'];
-$escala = $_POST['escala'];
 
-$sql = mysqli_query($conexao,"INSERT INTO tabelafuncionario(nome,cpf,rg,senha,email, telefone, idSetor, funcao, hrsemanais, escala)
-VALUES('$nome' , '$cpf' , '$rg' , '$senha' , '$email' , '$telefone', '$idSetor', '$funcao', '$hrsemanais','$escala')");
+$funcionario = new Funcionario();
+ 
+$funcionario->nome = $_POST['nome'];
+$funcionario->cpf = $_POST['cpf'];
+$funcionario->rg = $_POST['rg'];
+$funcionario->email = $_POST['email'];
+$funcionario->senha = $_POST['senha'];
+$funcionario->telefone = $_POST['telefone'];
+$funcionario->id_setor = $_POST['id_setor'];
+$funcionario->id_funcao = $_POST['id_funcao'];
+$funcionario->id_carga_hrs = $_POST['id_carga_hrs'];
+$funcionario->segunda = $_POST['segunda'];
+$funcionario->terca = $_POST['terca'];
+$funcionario->quarta = $_POST['quarta'];
+$funcionario->quinta = $_POST['quinta'];
+$funcionario->sexta = $_POST['sexta'];
+$funcionario->sabado = $_POST['sabado'];
+$funcionario->domingo = $_POST['domingo'];
 
-header("Location: painelgerentesetor.php");
+
+
+$funcionario->createFuncionario();
+
+header("Location: loginGSetor.php");
  		exit;
+?>
+
+
+
 ?>
 </body>
 </html>

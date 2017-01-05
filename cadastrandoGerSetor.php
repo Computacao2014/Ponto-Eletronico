@@ -16,7 +16,7 @@ $gerentesetor->email = $_POST['email'];
 $gerentesetor->senha = $_POST['senha'];
 $gerentesetor->telefone = $_POST['telefone'];
 $gerentesetor->matricula = $_POST['matricula'];
-$gerentesetor->setor = $_POST['setor'];
+$gerentesetor->id_setor = $_POST['id_setor'];
 
 $gerentesetor->createGerente();
 

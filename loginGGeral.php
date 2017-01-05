@@ -4,7 +4,7 @@ define("Tiluto", "Primeira constante");
 ?>
 
 <html>
-<head> 
+<head>
 	<style>
 		fieldset input{
 			width: 100%;
@@ -40,9 +40,9 @@ define("Tiluto", "Primeira constante");
 		<fieldset>
 		<center>
 		<img src='imagens/imgponto.png'><br><hr>	
-		Matricula: <input type="text" name="matricula" required="">
+		Matricula: <input  type="text" name="matricula" required="">
 		<br>
-		Senha: <input type="password" name="senha" required=""> 
+		Senha: <input  type="password" name="senha" required=""> 
 		<br>
 		<input type="submit">
 		</center>

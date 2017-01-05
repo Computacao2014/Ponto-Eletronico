@@ -41,10 +41,10 @@
 		<label>Matricula:</label>
 		<input type="text" name="matricula" required="">
 		<label>Nome Setor:</label>
-		<select nome='setor' type="text" >
-			<option value="proplan" >Proplan</option>
-  			<option value="porp">Prop</option>
-  			<option value="prex">Prex</option>
+		<select name="id_setor" type="text" >
+			<option value="1" >Reitoria</option>
+  			<option value="2">Prex</option>
+  			<option value="3">Prop</option>
 
 		</select>
 		

@@ -19,7 +19,7 @@ $gerenteGeral->senha = $_POST['senha'];
 $gerenteGeral->telefone = $_POST['telefone'];
 $gerenteGeral->matricula = $_POST['matricula'];
 
-$gerenteGeral->updateGerente();
+$gerenteGeral->createGerente();
 
 header("Location: loginGGeral.php");
  		exit;

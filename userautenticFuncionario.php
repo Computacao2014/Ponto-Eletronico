@@ -13,10 +13,10 @@ mysqli_select_db($conexao , $banco) or die("erro no banco");
 
 	<script type="text/javascript">
 	function loginsuccessfully(){
-		setTimeout("window.location='painelfuncionario.php'",1000);
+		setTimeout("window.location='painelfuncionario.php'",0);
 	}
 	function loginfail(){
-		setTimeout("window.location='loginFuncionario.php'",1000);
+		setTimeout("window.location='loginFuncionario.php'",0);
 	}
 	</script>
 </head>
@@ -33,7 +33,7 @@ mysqli_select_db($conexao , $banco) or die("erro no banco");
 		session_start();
 		$_SESSION['cpf'] = $_POST['cpf'];
 		$_SESSION['senha'] = $_POST['senha'];
-		echo "voce foi logado com sucesso! Aguarde...";
+		
 		echo "<script>loginsuccessfully()</script>";
 	
 	}

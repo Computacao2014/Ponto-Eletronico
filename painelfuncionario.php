@@ -13,50 +13,65 @@ mysqli_select_db($conexao , $banco) or die("erro no banco");
  		exit;
  	}else
  	{
- 		echo "<center>Voce esta logado!</center>";
+ 		
  	}
   ?>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<title>Menu Vertical</title>
-<style type="text/css">
-<!--
-ul#menu {
-margin-top: 200px;	
-width:300px;
-border:1px solid #003399;
-background:#FADE8B;
+<title>Funcionário</title>
+<style>
+html{
+	background-color: rgb(150, 150, 255);
+}
 
-padding:0;
-list-style-type:none;
+fieldset{
+	background-color: rgb(150,150,255);
+	width: 400px;
+	border-radius: 10px
+
 }
-ul#menu li {
-border-bottom:10px solid #A4A0F5;
+a:link, a:visited {
+		    background-color: rgb(150,150,255);
+		    color: white;
+		    padding: 8px 14px;
+		    text-align: center; 
+		    display: inline-block;
+		    width: 350px;
+		    border-radius: 15px;
+		    font-size: 24px;
+		    -webkit-transition-duration: 0.4s; /* Safari */
+    		transition-duration: 0.40s;
+
+		}
+
+		a:hover, a:active {
+		    background-color: white;
+		    color: rgb(150,150,255);
+		    border: 1px solid rgb(130,130,255);
+		}
+img{
+	width: 300px;
 }
-ul#menu li a:link, ul#menu li a:visited {
-display:block;
-height:1%;
-text-decoration:none;
-font-family: Geneva, Arial, Helvetica, sans-serif;
-font-size:14px;
-color:#5E0F50;
-border-left:10px solid #EEC591;
-padding-left:5px;
+h1{
+	color: white;
+	border: 2px solid black;
+	width: 400px;
 }
-ul#menu li a:hover {
-background-color: #FFE4B5;
-color:#DAA520;
-border-left:10px solid #FFD39B;
-}
--->
 </style>
+
+<img src="imagens/logouespi.png">
+<hr>
+<center><h1>Painel Funcionário</h1></center>
 </head>
 <body>
-<ul id="menu">
+<center>
+<fieldset>
 <a href="<?= "INCOMPLETO" ?>"><?= "Exibir escala" ?></a><br><hr>
-<a href="<?= "INCOMPLETO" ?>"><?= "Exibir relatório" ?></a><br>
+<a href="<?= "INCOMPLETO" ?>"><?= "Exibir relatório" ?></a><br><hr>
 <a href="<?= "logout.php" ?>"><?= "Sair" ?></a>
-</ul>
+</fieldset>
+</center>
+
 </body>
 </html>
