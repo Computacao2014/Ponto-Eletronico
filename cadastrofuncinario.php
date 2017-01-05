@@ -58,9 +58,15 @@ $semana = array(0,0,0,0,0,0,0);
 
 		<center><label>Função:</label>
 		<select name="id_funcao" type="text" >
-			<option value="1" >Segurança</option>
-  			<option value="2">Limpeza</option>
-  			<option value="3">Administrativo</option>
+			<option value="1" >Segurança 7:00 - 19:00</option>
+  			<option value="2">Segurança 19:00 - 7:00</option>
+  			<option value="3">Limpeza 6:00 - 14:00</option>
+  			<option value="4">Limpeza 8:00 - 16:00</option>
+  			<option value="5">Limpeza 14:00 - 22:00</option>
+  			<option value="6">Administrativo 7:30 - 13:30</option>
+
+
+
 
 		</select></center>
 
@@ -69,9 +75,9 @@ $semana = array(0,0,0,0,0,0,0);
 		<br>
 		<label>Horas semanais de trabalho:</label>
 		<select name="id_carga_hrs" type="text" >
-			<option value="1">30 Hrs semanais</option>
-  			<option value="2">20 Hrs semanais</option>
-  			<option value="3">35 Hrs semanais</option>
+			<option value="1">40 Hrs semanais</option>
+  			<option value="2">48 Hrs semanais</option>
+  			<option value="3">30 Hrs semanais</option>
 
 		</select><br>	
 		

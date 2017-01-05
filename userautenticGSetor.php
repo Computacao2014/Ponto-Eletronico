@@ -28,11 +28,12 @@ mysqli_select_db($conexao , $banco) or die("erro no banco");
 	$sql = mysqli_query($conexao,"SELECT * FROM gerentesetor WHERE matricula = '$matricula' and senha = '$senha'") or die("usuario n encontrado");
 	//$sql = "SELECT * FROM gerentegeral WHERE matricula = '$matricula' and senha = '$senha'";
 	$rows = mysqli_num_rows($sql);
-
+	$fetch = mysqli_fetch_row($sql);
 	if($rows > 0){
 		session_start();
 		$_SESSION['matricula'] = $_POST['matricula'];
 		$_SESSION['senha'] = $_POST['senha'];
+		$_SESSION['id_setor'] = $fetch[7];
 		
 		echo "<script>loginsuccessfully()</script>";
 	

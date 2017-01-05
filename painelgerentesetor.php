@@ -59,7 +59,9 @@ h1{
 	width: 400px;
 }
 </style>
-
+<?php 
+	echo $_SESSION['id_setor'];
+ ?>
 <img src="imagens/logouespi.png">
 <hr>
 <center><h1>Painel Gerente Setor</h1></center>
@@ -71,7 +73,11 @@ h1{
 <a href="<?= "cadastrofuncinario.php" ?>"><?= "Cadastrar funcionario" ?></a><br><hr>
 <a href="<?= "logout.php" ?>"><?= "Sair" ?></a><hr>
 <br>
-<a href="<?= "testeread.php" ?>"><?= "Listar Funcionarios" ?></a>
+<a href="<?= "readgsetor.php" ?>"><?= "Listar Funcionarios" ?></a>
+<form method='post' action='readgsetor.php'>
+	<input type='hidden' name='id_setor' value='<?= $_SESSION['id_setor'] ?>'>
+	<input type='submit' name='Listar Funcionarios'>
+</form>
 </fieldset>
 </center>
 </body>
