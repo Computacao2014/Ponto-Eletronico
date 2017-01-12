@@ -46,7 +46,7 @@
 
 		<br><br><br><br><br>
 		
-		<a href="<?= "painelenviaremail.php" ?>"><?= "Recuperar Senha" ?></a>
+		<a href="<?= "painelenviaremailGeral.php" ?>"><?= "Recuperar Senha" ?></a>
 
 		</center>
 		</fieldset>

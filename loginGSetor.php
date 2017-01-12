@@ -53,6 +53,7 @@ define("Tiluto", "Primeira constante");
 		<input type="submit">
 
 		<br><br><br><br><br>
+		<a href="<?= "painelenviaremailSetor.php" ?>"><?= "Recuperar Senha" ?></a>
 		</center>
 		</fieldset>
 	</form>

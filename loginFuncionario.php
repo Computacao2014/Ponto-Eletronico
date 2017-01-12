@@ -45,6 +45,7 @@
 		<input type="submit">
 
 		<br><br><br><br><br>
+		<a href="<?= "painelenviaremailFun.php" ?>"><?= "Recuperar Senha" ?></a>
 		</center>
 		</fieldset>
 	</form>

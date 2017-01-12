@@ -53,7 +53,7 @@ input[type=submit]{
     color: white  ;
     border-color: #333;
     padding: 14px 16px;
-    }
+    }   
 input:hover{
     background-color: #111;
     
@@ -82,8 +82,10 @@ input:hover{
             <input type="hidden" name="cpf" value="<?= $_SESSION['cpf']?>">
             <input type="submit" Value='Bater Ponto'>    
         </form></li>
-
-        <li><a href="">Relatório</a></li>
+         <li><form method='post' action="relatoriofuncionario.php">
+            <input type="hidden" name="cpf" value="<?= $_SESSION['cpf']?>">
+            <input type="submit" Value='Relatório'>    
+        </form></li>
         <li><a href="logout.php">Sair</a></li>
 </ul>
 

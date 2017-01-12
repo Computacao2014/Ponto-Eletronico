@@ -76,7 +76,11 @@ li a:hover {
 
         <li><a class="active" href="painelfuncionario.php">Página Funcionário</a></li>
         <li><a href="#">Bater Ponto</a></li>
-        <li><a href="">Relatório</a></li>
+        </form></li>
+         <li><form method='post' action="relatoriofuncionario.php">
+            <input type="hidden" name="cpf" value="<?= $_POST['cpf']?>">
+            <input type="submit" Value='Relatório'>    
+        </form></li>
         <li><a href="logout.php">Sair</a></li>
 	</ul>
 
