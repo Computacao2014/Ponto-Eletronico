@@ -5,48 +5,90 @@ $semana = array(0,0,0,0,0,0,0);
 <html>
 <head>
 	<title> Tela De Cadastro de Funcinario </title>
-	<h2>Cadastro</h2>
-	<style>
-		fieldset{
-			width: 700px;
-			//margin: 200px;
-			margin-left: 250px;
-			margin-top: 100px;
+	
+			<style>
+			ul {
+    			list-style-type: none;
+    			margin: 0;
+    			padding: 0;
+    			overflow: hidden;
+    			background-color: #333;
+    			margin-left: 0px;
+  				margin-top: 0px;
+			}
 
-		}
-		fieldset input{
-			width: 100%;
-			margin-bottom: 10px;
-		}
+			li {
+    			float: left;
+			}
 
+			li a {
+    			display: block;
+    			color: white;
+    			text-align: center;
+    			padding: 14px 16px;
+    			text-decoration: none;
+			}
+
+			li a:hover {
+    			background-color: #111;
+			}
+
+			fieldset{
+				width: 700px;
+				margin-left: 0px;
+				margin-top: 0px;
+			}
+
+			fieldset input{
+				margin-left: 250px;
+				width: 100%;
+				margin-bottom: 10px;
+			}
 	</style>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+	</head>
+
+
+	<body>
+		<br>
+			<img src="imagens/logouespi.png">
+		<br><br>
+
+<ul>
+  			<li><a class="active" href="painelgerentesetor.php">Página Gerente Setor</a></li>
+  			<li><a href="cadastrofuncinario.php">Cadastrar Funcionário</a></li>
+  			<li><a href="readgsetor.php">Listar Funcionários Setor</a></li>
+  			<li><a href="logout.php">Sair</a></li>
+		</ul>
+
+  
+
+		</style>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+
+
 </head>
-<body>
+
 	<form method="post" action="cadastrandoFuncionario.php">
+
 		<fieldset>
-		<legend>Cadastro Funcionario:</legend>	
+		<center><h3>Cadastrar Funcionário:</h3>		
+
+
+		<input type="text" name="nome" placeholder="Nome" required=""><br>
+
+		<input type="password" placeholder="Senha" name="senha" required=""> 
+				
+		<input pattern="^[A-Za-z0-9_]{1,15}@[A-Za-z0-9_]{1,15}.[A-Za-z0-9_]{1,10}$" type="text" placeholder="Email" name="email" required="">
 		
-
-
-		<label>Nome:</label>
-		<input type="text" name="nome" required="">
-
-		<label>Senha:</label>
-		<input type="password" name="senha" required=""> 
-
-		<label>Email:</label>
-		<input pattern="^[A-Za-z0-9_]{1,15}@[A-Za-z0-9_]{1,15}.[A-Za-z0-9_]{1,10}$" type="text" name="email" required="">
+		<input pattern="^[0-9]{7}$" type="text" placeholder="Rg" name="rg" required="">
 		
-		<label>Rg:</label>
-		<input pattern="^[0-9]{7}$" type="text" name="rg" required="">
+		<input pattern="^[0-9]{11}$" type="text" name="cpf" placeholder="Cpf" required="">
 		
-		<label>Cpf:</label>
-		<input pattern="^[0-9]{11}$" type="text" name="cpf" required="">
+		<input pattern="^[0-9]{1,15}$" type="text" placeholder="Telefone" name="telefone">
 
-		<label>Telefone:</label>
-		<input pattern="^[0-9]{1,15}$" type="text" name="telefone" required="">
-
-
+		
 		<label>Nome Setor:</label>
 		<select name="id_setor" type="text" >
 			<option value="1" >Reitoria</option>
@@ -66,11 +108,7 @@ $semana = array(0,0,0,0,0,0,0);
   			<option value="6">Administrativo 7:30 - 13:30</option>
 
 
-
-
-		</select></center>
-
-
+		</select>
 
 		<br>
 		<label>Horas semanais de trabalho:</label>
@@ -80,10 +118,10 @@ $semana = array(0,0,0,0,0,0,0);
   			<option value="3">30 Hrs semanais</option>
 
 		</select><br>	
-		
 
 		
 		<label>Escala de Trabalho</label>
+		 
 		 <table>
 		  <tr>
 		    <th>Dia da Semana</th>
@@ -116,14 +154,16 @@ $semana = array(0,0,0,0,0,0,0);
 
 		  </tr>
 		</table> 
-
+		
 		
 
+		<br>		
 
 
-		<input type="submit" value="Cadastrar">
-		</fieldset>
+</fieldset>
+			<center><input class="btn btn-success"  type='submit' value='Cadastrar'></center>
 	</form>
+
 	
 </body>
 </html>

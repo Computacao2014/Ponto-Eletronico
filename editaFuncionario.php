@@ -22,72 +22,96 @@ $sql = mysqli_query($conexao,"SELECT * FROM tabelafuncionario WHERE cpf = $busca
  <head>
  	<title>Funcionário</title>
  	<style type="text/css">
- 		input{
- 			width: 400px;
- 			margin-left: 100px;
-
- 		}
- 		fieldset{
- 			margin-left: 300px;
- 			margin-top: 50px;
- 			background-color: white;
- 			width: 400px;
- 			border-radius: 10px;
- 		}
- 		html{
- 			background-color: rgb(150,150,255);
- 		}
- 		input{
-		    background-color: rgb(150,150,255);
-		    color: red;
-		    padding: 3px 5px;
-		    text-align: center; 
-		    display: inline-block;
-		    width: 250px;
-		   margin-left: 150px;
-		    font-size: 14px;
-		   
-    		
+ 		ul {
+		    list-style-type: none;
+		    margin: 0;
+		    padding: 0;
+		    overflow: hidden;
+		    background-color: #333;
+		    margin-left: 0px;
+			margin-top: 0px;
 		}
 
-		input:hover, input:active {
-		    background-color: rgb(110,110,255);
-		    color: black;
+		li {
+		    float: left;
 		}
+
+		li a {
+		    display: block;
+		    color: white;
+		    text-align: center;
+		    padding: 14px 16px;
+		    text-decoration: none;
+		}
+
+		li a:hover {
+		    background-color: #111;
+		    color: white;
+		}
+		input[type=submit]{
+		    background-color: #333;
+		    color: white  ;
+		    border-color: #333;
+		    padding: 14px 16px;
+		    }
+		input[type=submit]:hover{
+		    background-color: #111;
+		    
+		}
+
+		fieldset input[type=text]{
+			border-radius: 5px;
+			width: 400px;
+			margin-right: 200px;
+		}   
  	</style>
  	
- </head>
- 
-  <img src="imagens/logouespi.png" class="img-responsive">
-  <center><h1>Edita Funcionários</h1></center>
-  <hr>
 
+
+ 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+	    </head>
+
+	    <body>
+	        <br>
+	            <img src="imagens/logouespi.png">
+	        <br><br>
+
+</head>
 
  <body>
+ 	<ul>
+
+	  <li><a class="active" href="painelgerentesetor.php">Página Gerente Setor</a></li>
+	        <li><a href="cadastrofuncinario.php">Cadastrar Funcionário</a></li>
+	               
+	        <li><a href="#">Listar Funcionários do setor</a></li>
+
+	        <li><a href="logout.php">Sair</a></li>
+	</ul>
  	
  	<fieldset class='form-inline'>
  	<center>
 	 <form method='post' action='updateFuncionario.php'>
-
+	 <center>
 	 	<label>Nome:</label>
 	 	<input type='text' name='nome' value='<?php echo $result[0]; ?>'>
-
+	 	<br>
 	 	<label>Cpf:</label>
 	 	<input type='text' name='cpf' value='<?php echo $result[1]; ?>' >
-
+	 	<br>
 	 	<label>Rg:</label>
 	 	<input type='text' name='rg' value='<?php echo $result[2]; ?>'>
-
+	 	<br>
 	 	<label>Telefone:</label>
 	 	<input type='text' name='telefone' value='<?php echo $result[3]; ?>'>
-
+	 	<br>
 	 	<label>Email:</label>
 	 	<input type='text' name='email' value='<?php echo $result[4]; ?>'>
-
+	 	<br>
 	 	<label>Senha:</label>
 	 	<input type='text' name='senha' value='<?php echo $result[5]; ?>'>
-	 	
-	 	
+	 	<br>	
+	</center> 	
 	 	<input type='hidden' name='cpf_old' value='<?= $_POST['cpf'] ?>'>
           
           

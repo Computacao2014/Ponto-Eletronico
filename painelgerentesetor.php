@@ -9,76 +9,84 @@ mysqli_select_db($conexao , $banco) or die("erro no banco");
  <?php 
  	session_start();
  	if (!isset($_SESSION["matricula"]) || !isset($_SESSION["senha"])) {
- 		header("Location: loginGSetor.php");
+ 		header("Location: loginGGeral.php");
  		exit;
  	}else
  	{
  		
  	}
   ?>
+
+
+
+<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<title>Gerente Setor</title>
 <style>
-html{
-	background-color: rgb(150, 150, 255);
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    margin-left: 0px;
+	margin-top: 0px;
 }
 
-fieldset{
-	background-color: rgb(150,150,255);
-	width: 400px;
-	border-radius: 10px
-
+li {
+    float: left;
 }
-a:link, a:visited {
-		    background-color: rgb(150,150,255);
-		    color: white;
-		    padding: 8px 14px;
-		    text-align: center; 
-		    display: inline-block;
-		    width: 350px;
-		    border-radius: 15px;
-		    font-size: 24px;
-		    -webkit-transition-duration: 0.4s; /* Safari */
-    		transition-duration: 0.40s;
 
-		}
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
 
-		a:hover, a:active {
-		    background-color: white;
-		    color: rgb(150,150,255);
-		    border: 1px solid rgb(130,130,255);
-		}
-img{
-	width: 300px;
+li a:hover {
+    background-color: #111;
+    color: white;
 }
-h1{
-	color: white;
-	border: 2px solid black;
-	width: 400px;
-}
+input[type=submit]{
+    background-color: #333;
+    color: white  ;
+    border-color: #333;
+    padding: 14px 16px;
+    }
+input:hover{
+    background-color: #111;
+    
+}    
 </style>
-<?php 
-	echo $_SESSION['id_setor'];
- ?>
-<img src="imagens/logouespi.png">
-<hr>
-<center><h1>Painel Gerente Setor</h1></center>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+    </head>
+
+    <body>
+        <br>
+            <img src="imagens/logouespi.png">
+        <br><br>
+
+
+
 
 </head>
-<body>
-	<center>
-<fieldset>
-<a href="<?= "cadastrofuncinario.php" ?>"><?= "Cadastrar funcionario" ?></a><br><hr>
-<a href="<?= "logout.php" ?>"><?= "Sair" ?></a><hr>
-<br>
-<a href="<?= "readgsetor.php" ?>"><?= "Listar Funcionarios" ?></a>
-<form method='post' action='readgsetor.php'>
-	<input type='hidden' name='id_setor' value='<?= $_SESSION['id_setor'] ?>'>
-	<input type='submit' name='Listar Funcionarios'>
-</form>
-</fieldset>
-</center>
+
+<ul>
+
+  <li><a class="active" href="painelgerentesetor.php">Página Gerente Setor</a></li>
+        <li><a href="cadastrofuncinario.php">Cadastrar Funcionário</a></li>
+               
+        <li><form method='post' action="readgsetor.php">
+            <input type="hidden" name="id_setor" value="<?= $_SESSION['id_setor']?>">
+            <input type="submit" Value='Listar Funcionários do setor'>    
+        </form></li>li>
+
+        <li><a href="logout.php">Sair</a></li>
+</ul>
+
 </body>
 </html>

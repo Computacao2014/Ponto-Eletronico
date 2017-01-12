@@ -8,51 +8,74 @@ $banco = "pontoeletronico";
 $conexao = mysqli_connect($host , $user , $pass) or die(mysql_error());
 mysqli_select_db($conexao , $banco) or die("erro no banco");
 
-$sql = mysqli_query($conexao,"SELECT * FROM tabelafuncionario ") or die("usuario n encontrado");
+$sql = mysqli_query($conexao,"SELECT * FROM tabelafuncionario ") or die("Usuário não encontrado");
 $rows = mysqli_num_rows($sql);
 
-
  ?>
+
+<!DOCTYPE html>
 <html>
 <head>
-	<title></title>
-	<style type="text/css">
-  html{
-    background-color: rgb(150,150,255);
-  }
-		table#t01 tr:nth-child(even) {
-    background-color: rgb(150,150,255);
-    
+<style>
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    margin-left: 0px;
+  margin-top: 0px;
 }
-table#t01 tr:nth-child(odd) {
-    background-color: white;
-    
-    
+
+li {
+    float: left;
 }
-table#t01 th {
+
+li a {
+    display: block;
     color: white;
-    background-color: rgb(140,140,255);
-    
-    width: 200px;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
 }
 
-
-	</style>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+li a:hover {
+    background-color: #111;
+}
+</style>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
 </head>
-<div class="page-header">
-  <img src="imagens/logouespi.png" class="img-responsive">
-  <center><h1>Listagem de Funcionários</h1></center>
 
-</div>  
+
+<body>
+<br>
+<img src="imagens/logouespi.png">
+<br><br>
+
+<ul>
+
+  <li><a class="active" href="painelgerentegeral.php">Página Gerente Geral</a></li>
+  <li><a href="cadastroGerenteSetor.php">Cadastrar Gerente Setor</a></li>
+  <li><a href="testeread.php">Listar Funcionários Geral</a></li>
+  <li><a href="logout.php">Sair</a></li>
+</ul>
+
+</body>
+
+  
+</head>
+
+  
+  
+ 
 
 <body>
 <center> 
 
 <table id="t01" class='table-condensed'>
   <tr>
-    <th>MATRICULA</th>
-    <th>NOME</th> 
+    <th>Matrícula</th>
+    <th>Nome</th> 
     
   </tr>
   <?php while($fetch = mysqli_fetch_row($sql)){ ?>
@@ -65,6 +88,12 @@ table#t01 th {
           
           <input type='hidden' name='cpf' value='<?= $fetch[1] ?>'>
           <input class="btn btn-danger" type='submit' value='Deletar'>
+
+
+
+
+
+
         </form></td>
     		<td><form method='post' action='editaFuncionario.php'>
           

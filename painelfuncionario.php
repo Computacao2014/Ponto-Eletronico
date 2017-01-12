@@ -16,62 +16,76 @@ mysqli_select_db($conexao , $banco) or die("erro no banco");
  		
  	}
   ?>
+
+
+
+<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<title>Funcionário</title>
 <style>
-html{
-	background-color: rgb(150, 150, 255);
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    margin-left: 0px;
+	margin-top: 0px;
 }
 
-fieldset{
-	background-color: rgb(150,150,255);
-	width: 400px;
-	border-radius: 10px
-
+li {
+    float: left;
 }
-a:link, a:visited {
-		    background-color: rgb(150,150,255);
-		    color: white;
-		    padding: 8px 14px;
-		    text-align: center; 
-		    display: inline-block;
-		    width: 350px;
-		    border-radius: 15px;
-		    font-size: 24px;
-		    -webkit-transition-duration: 0.4s; /* Safari */
-    		transition-duration: 0.40s;
 
-		}
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
 
-		a:hover, a:active {
-		    background-color: white;
-		    color: rgb(150,150,255);
-		    border: 1px solid rgb(130,130,255);
-		}
-img{
-	width: 300px;
+li a:hover {
+    background-color: #111;
 }
-h1{
-	color: white;
-	border: 2px solid black;
-	width: 400px;
-}
+input[type=submit]{
+    background-color: #333;
+    color: white  ;
+    border-color: #333;
+    padding: 14px 16px;
+    }
+input:hover{
+    background-color: #111;
+    
+}    
 </style>
 
-<img src="imagens/logouespi.png">
-<hr>
-<center><h1>Painel Funcionário</h1></center>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+    </head>
+
+    <body>
+        <br>
+            <img src="imagens/logouespi.png">
+        <br><br>
+
+
+
+
 </head>
-<body>
-<center>
-<fieldset>
-<a href="<?= "INCOMPLETO" ?>"><?= "Exibir escala" ?></a><br><hr>
-<a href="<?= "INCOMPLETO" ?>"><?= "Exibir relatório" ?></a><br><hr>
-<a href="<?= "logout.php" ?>"><?= "Sair" ?></a>
-</fieldset>
-</center>
+
+<ul>
+
+        <li><a class="active" href="painelfuncionario.php">Página Funcionário</a></li>
+
+        <li><form method='post' action="testecheckin.php">
+            <input type="hidden" name="cpf" value="<?= $_SESSION['cpf']?>">
+            <input type="submit" Value='Bater Ponto'>    
+        </form></li>
+
+        <li><a href="">Relatório</a></li>
+        <li><a href="logout.php">Sair</a></li>
+</ul>
 
 </body>
 </html>

@@ -26,6 +26,6 @@ mysqli_query($conexao,$sql);
 
 
 
-header("Location: testeread.php");
+header("Location: painelgerentesetor.php");
  		exit;
  ?>

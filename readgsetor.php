@@ -1,5 +1,6 @@
 <?php 
 include("GerenteGeral.php");
+
 $setor=$_POST['id_setor'];
 $host = "localhost";
 $user = "root";
@@ -10,41 +11,61 @@ mysqli_select_db($conexao , $banco) or die("erro no banco");
 
 $sql = mysqli_query($conexao,"SELECT * FROM tabelafuncionario WHERE id_setor = '$setor'") or die("usuario n encontrado");
 $rows = mysqli_num_rows($sql);
-
-
  ?>
-<html>
+
+ <html>
 <head>
-	<title></title>
-	<style type="text/css">
-  html{
-    background-color: rgb(150,150,255);
-  }
-		table#t01 tr:nth-child(even) {
-    background-color: rgb(150,150,255);
-    
+<style>
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    margin-left: 0px;
+  margin-top: 0px;
 }
-table#t01 tr:nth-child(odd) {
-    background-color: white;
-    
-    
+
+li {
+    float: left;
 }
-table#t01 th {
+
+li a {
+    display: block;
     color: white;
-    background-color: rgb(140,140,255);
-    
-    width: 200px;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
 }
 
-
-	</style>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+li a:hover {
+    background-color: #111;
+}
+</style>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
 </head>
-<div class="page-header">
-  <img src="imagens/logouespi.png" class="img-responsive">
-  <center><h1>Listagem de Funcionários</h1></center>
 
-</div>  
+
+<body>
+<br>
+<img src="imagens/logouespi.png">
+<br><br>
+
+<ul>
+
+<li><a class="active" href="painelgerentesetor.php">Página Gerente Setor</a></li>
+        <li><a href="cadastrofuncinario.php">Cadastrar Funcionário</a></li>
+        <li><a href="#">Listar Funcionários Setor</a></li>
+        <li><a href="logout.php">Sair</a></li>
+</ul>
+
+</body>
+
+  
+</head>
+
+  
+  
 
 <body>
 <center> 
@@ -59,23 +80,23 @@ table#t01 th {
         
         
         <tr>
-    		<td><?= $fetch[1] ?></td>
-    		<td><?= $fetch[0] ?></td>
+        <td><?= $fetch[1] ?></td>
+        <td><?= $fetch[0] ?></td>
         <td><form method='post' action='deletaFuncionario.php'>
           
           <input type='hidden' name='cpf' value='<?= $fetch[1] ?>'>
           <input class="btn btn-danger" type='submit' value='Deletar'>
         </form></td>
-    		<td><form method='post' action='editaFuncionario.php'>
+        <td><form method='post' action='editaFuncionario.php'>
           
           <input type='hidden' name='cpf' value='<?= $fetch[1] ?>'>
           <input class='btn btn-success' type='submit' value='Editar'>
           
         </form></td>
 
-  		  </tr>
+        </tr>
 
-  <?php }?>		
+  <?php }?>   
     
 
 </table>
