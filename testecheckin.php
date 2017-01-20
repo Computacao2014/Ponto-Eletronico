@@ -65,11 +65,22 @@ li a:hover {
 		    
 		}  
 	
-	</style>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
-	<img src="imagens/logouespi.png">
+</style>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+    </head>
+
+    <body>
+        <br>
+            <img src="imagens/logouespi.png">
         <br><br>
+
+
+
+
 </head>
+
 <body>
 
 	<ul>

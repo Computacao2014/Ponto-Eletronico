@@ -6,6 +6,15 @@
 			margin-bottom: 10px;
 			background-color: rgb(255,255,255);
 		}
+		fieldset input[type=tex]{
+    border-radius: 5px;
+}
+fieldset input[type=submit]{
+    padding: 2px 10px;
+    
+    color: black;
+    border-radius: 5px;
+}
 		fieldset legend{
 			font-size: 26px;
 		}
@@ -23,6 +32,10 @@
 			
 			background-color: rgb(255,255,255);
 		}
+		a{
+			color: gray;
+		}
+		
 		
 	</style>	
 </head>
@@ -42,9 +55,9 @@
 		<br>
 
 
-		<input type="submit">
+		<input type="submit" value="Enviar">
 
-		<br><br><br><br><br>
+		<br>
 		
 		<a href="<?= "painelenviaremailGeral.php" ?>"><?= "Recuperar Senha" ?></a>
 

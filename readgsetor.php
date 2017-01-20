@@ -9,7 +9,8 @@ $banco = "pontoeletronico";
 $conexao = mysqli_connect($host , $user , $pass) or die(mysql_error());
 mysqli_select_db($conexao , $banco) or die("erro no banco");
 
-$sql = mysqli_query($conexao,"SELECT * FROM tabelafuncionario WHERE id_setor = '$setor'") or die("usuario n encontrado");
+$sql = mysqli_query($conexao,"SELECT * FROM tabelafuncionario f, funcao fn, empresa e WHERE f.id_setor = '$setor' 
+  AND f.id_funcao = fn.id_funcao AND f.id_emp = e.id_emp") or die("usuario n encontrado");
 $rows = mysqli_num_rows($sql);
  ?>
 
@@ -72,8 +73,10 @@ li a:hover {
 
 <table id="t01" class='table-condensed'>
   <tr>
-    <th>MATRICULA</th>
-    <th>NOME</th> 
+    <th>Cpf</th>
+    <th>Nome</th>
+    <th>Função</th>
+    <th>Empresa</th>
     
   </tr>
   <?php while($fetch = mysqli_fetch_row($sql)){ ?>
@@ -82,6 +85,8 @@ li a:hover {
         <tr>
         <td><?= $fetch[1] ?></td>
         <td><?= $fetch[0] ?></td>
+        <td><?= $fetch[18] ?></td>
+        <td><?= $fetch[22] ?></td>
         <td><form method='post' action='deletaFuncionario.php'>
           
           <input type='hidden' name='cpf' value='<?= $fetch[1] ?>'>
@@ -91,6 +96,15 @@ li a:hover {
           
           <input type='hidden' name='cpf' value='<?= $fetch[1] ?>'>
           <input class='btn btn-success' type='submit' value='Editar'>
+          
+
+        </form></td>
+
+          <td><form method='post' action='editaEscala.php'>
+          
+          <input type='hidden' name='cpf' value='<?= $fetch[1] ?>'>
+          <input class='btn btn-success' type='submit' value='Editar Escala'>
+          
           
         </form></td>
 

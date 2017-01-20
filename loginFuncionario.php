@@ -23,6 +23,9 @@
 			
 			background-color: rgb(255,255,255);
 		}
+		a{
+			color: gray;
+		}
 		
 	</style>	
 </head>
@@ -42,10 +45,9 @@
 		<br>
 
 
-		<input type="submit">
-
-		<br><br><br><br><br>
+		<input type="submit"><br>
 		<a href="<?= "painelenviaremailFun.php" ?>"><?= "Recuperar Senha" ?></a>
+		
 		</center>
 		</fieldset>
 	</form>

@@ -1,4 +1,5 @@
 <?php 
+
 include("GerenteGeral.php");
 
 $host = "localhost";
@@ -8,10 +9,10 @@ $banco = "pontoeletronico";
 $conexao = mysqli_connect($host , $user , $pass) or die(mysql_error());
 mysqli_select_db($conexao , $banco) or die("erro no banco");
 
-$sql = mysqli_query($conexao,"SELECT * FROM tabelafuncionario f , setor s, funcao fn WHERE f.id_setor = s.id_setor and f.id_funcao = fn.id_funcao") or die("Usuário não encontrado");
+$sql = mysqli_query($conexao,"SELECT * FROM gerentesetor g, setor c where g.id_setor=c.id_setor") or die("Usuário não encontrado");
 $rows = mysqli_num_rows($sql);
 
-?>
+ ?>
 
 <!DOCTYPE html>
 <html>
@@ -54,39 +55,73 @@ li a:hover {
 
 <ul>
 
-  <li><a class="active" href="painelgerentegeral.php">Página Gerente Geral</a></li>
+ <li><a class="active" href="painelgerentegeral.php">Página Gerente Geral</a></li>
   <li><a href="cadastroGerenteSetor.php">Cadastrar Gerente Setor</a></li>
   <li><a href="listargsetor.php">Listar Gerente Setor</a></li>
   <li><a href="testeread.php">Listar Funcionários Geral</a></li>
   <li><a href="logout.php">Sair</a></li>
 </ul>
 
+</body>
 
-<center>
+  
+</head>
+
+  
+  
+ 
+
+<body>
+<center> 
+
 <table id="t01" class='table-condensed'>
   <tr>
-    <th>Cpf</th>
-    <th>Nome</th>
-    <th>Função</th>
-    <th>Setor</th>
+    <th>Matrícula</th>
+    <th>Nome</th> 
+    <th>Nome do Setor</th> 
+
     
   </tr>
   <?php while($fetch = mysqli_fetch_row($sql)){ ?>
         
         
         <tr>
-    		<td><?= $fetch[1] ?></td>
-    		<td><?= $fetch[0] ?></td>
-        <td><?= $fetch[20] ?></td>
-        <td><?= $fetch[18] ?></td>
-        
+        <td><?= $fetch[5] ?></td>
+        <td><?= $fetch[0] ?></td>
+        <td><?= $fetch[9] ?></td>
 
-  		  </tr>
+        <td><form method='post' action='deletaGSetor.php'>
+          
+          <input type='hidden' name='matricula' value='<?= $fetch[5] ?>'>
+          <input type='hidden' name='nome' value='<?= $fetch[0] ?>'>
 
-  <?php }?>		
+          <input type='hidden' name='id_setor' value='<?= $fetch[9] ?>'>
+
+          <input class="btn btn-danger" type='submit' value='Deletar'>
+
+
+        </form></td>
+        <td><form method='post' action='editaGSetor.php'>
+          
+          <input type='hidden' name='matricula' value='<?= $fetch[5] ?>'>
+
+          <input type='hidden' name='nome' value='<?= $fetch[0] ?>'>
+
+          <input type='hidden' name='id_setor' value='<?= $fetch[9] ?>'>
+
+          <input class='btn btn-success' type='submit' value='Editar'>
+          
+        </form></td>
+
+        </tr>
+
+  <?php }?>   
     
 
 </table>
-</center>
+
+   
+
+   </center>
 </body>
 </html>

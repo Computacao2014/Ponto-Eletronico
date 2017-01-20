@@ -28,7 +28,10 @@ define("Tiluto", "Primeira constante");
 			
 			background-color: rgb(255,255,255);
 		}
-
+		a{
+			color: gray;
+		}
+		
 		
 	</style>
 	
@@ -52,7 +55,7 @@ define("Tiluto", "Primeira constante");
 
 		<input type="submit">
 
-		<br><br><br><br><br>
+		<br>
 		<a href="<?= "painelenviaremailSetor.php" ?>"><?= "Recuperar Senha" ?></a>
 		</center>
 		</fieldset>

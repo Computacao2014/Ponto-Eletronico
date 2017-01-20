@@ -88,14 +88,25 @@ function showDivs(n) {
 }
 </script>
 </head>
+
+<br>
+<br>
 <body>
 	<center>
 	<fieldset>
 		
+		<table>
+			<tr>
+				<td><a href="<?= "loginGGeral.php" ?>"><?= "Gerente Geral Online" ?></a></td>
+				<td><a href="<?= "loginGSetor.php" ?>"><?= "Gerente Setor Online" ?></a></td>
+				<td><a href="<?= "loginFuncionario.php" ?>"><?="Funcionário Online" ?></a></td>
+			</tr>
+
+		</table>
 		
-		<h1><a href="<?= "loginGGeral.php" ?>"><?= " Gerente Geral Online" ?></a></h1>
-		<h1><a href="<?= "loginGSetor.php" ?>"><?= "<center> Gerente Setor Online</center>" ?></a></h1>
-		<h1><a href="<?= "loginFuncionario.php" ?>"><?= "<center> Funcionário Online</center>" ?></a>
+		
+		
+		
 		
 	</fieldset>	
 	</center>	

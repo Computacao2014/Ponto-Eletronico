@@ -17,9 +17,9 @@ $funcionario->rg = $_POST['rg'];
 $funcionario->email = $_POST['email'];
 $funcionario->senha = $_POST['senha'];
 $funcionario->telefone = $_POST['telefone'];
-
 $funcionario->id_setor = $_POST['id_setor'];
 $funcionario->id_funcao = $_POST['id_funcao'];
+$funcionario->id_emp = $_POST['id_emp'];
 $funcionario->id_carga_hrs = $_POST['id_carga_hrs'];
 
 if(isset($_POST['segunda']))
@@ -85,7 +85,7 @@ if(isset($_POST['segunda']))
 
 $funcionario->createFuncionario();
 
-header("Location: loginGSetor.php");
+header("Location: painelgerentesetor.php");
  		exit;
 ?>
 

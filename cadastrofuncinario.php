@@ -4,7 +4,7 @@ $semana = array(0,0,0,0,0,0,0);
  ?>
 <html>
 <head>
-	<title> Tela De Cadastro de Funcinario </title>
+	<title> Tela De Cadastro de Funcionário </title>
 	
 			<style>
 			ul {
@@ -55,7 +55,7 @@ $semana = array(0,0,0,0,0,0,0);
 			<img src="imagens/logouespi.png">
 		<br><br>
 
-<ul>
+		<ul>
   			<li><a class="active" href="painelgerentesetor.php">Página Gerente Setor</a></li>
   			<li><a href="cadastrofuncinario.php">Cadastrar Funcionário</a></li>
   			<li><a href="readgsetor.php">Listar Funcionários Setor</a></li>
@@ -63,13 +63,6 @@ $semana = array(0,0,0,0,0,0,0);
 		</ul>
 
   
-
-		</style>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
-
-
-</head>
-
 	<form method="post" action="cadastrandoFuncionario.php">
 
 		<fieldset>
@@ -78,7 +71,7 @@ $semana = array(0,0,0,0,0,0,0);
 
 		<input type="text" name="nome" placeholder="Nome" required=""><br>
 
-		<input type="password" placeholder="Senha" name="senha" required=""> 
+		<input type="password" placeholder="Senha" name="senha" required="">
 				
 		<input pattern="^[A-Za-z0-9_]{1,15}@[A-Za-z0-9_]{1,15}.[A-Za-z0-9_]{1,10}$" type="text" placeholder="Email" name="email" required="">
 		
@@ -90,32 +83,78 @@ $semana = array(0,0,0,0,0,0,0);
 
 		
 		<label>Nome Setor:</label>
-		<select name="id_setor" type="text" >
-			<option value="1" >Reitoria</option>
-  			<option value="2">Prex</option>
-  			<option value="3">Prop</option>
-		</select>
+		
+			<select class="" name="id_setor" type="text" >
+					
+  					<option value="1">PRÓ-REITORIA DE EXTENSÃO, ASSUNTOS ESTUDANTIS E COMUNITÁRIOS - PREX</option>
+  					<option value="2">PRÓ-REITORIA DE PESQUISA E PÓS-GRADUAÇÃO - PROP</option>
+  					<option value="3" >REITORIA</option>
+  					<option value="4">PRÓ-REITORIA DE ENSINO E GRADUAÇÃO - PREG</option>
+  					<option value="5">PRÓ – REITORIA DE PLANEJAMENTO E ORÇAMENTO - PROPLAN</option>
+  					<option value="6">NÚCLEO DE CONCURSOS E PROMOÇÃO DE EVENTOS – NUCEPE</option>
+  					<option value="7">DIREÇÃO DE CENTRO DE CIÊNCIAS DA SAÚDE - CCS</option>
+  					<option value="8">DIREÇÃO DE CENTRO DE CIÊNCIAS DA NATUREZA - CCN</option>
+  					<option value="9">DIREÇÃO DE CENTRO DE CIÊNCIAS SOCIAIS E APLICADAS - CCSA</option>
+  					<option value="10">DIREÇÃO DE CENTRO DE CIÊNCIAS HUMANAS E LETRAS - CCHL</option>
+  					<option value="11" >DIREÇÃO DE CENTRO DE TECNOLOGIA E URBANISMO - CTU</option>
+  					<option value="12" >DIREÇÃO DE CENTRO DE CIÊNCIAS DA EDUCAÇÃO COMUNICAÇÃO E ARTES - CCECA</option>
+  					<option value="13" >PREFEITURA UNIVERSITÁRIA</option>
+  					<option value="14" >GRÁFICA E EDITORA</option>
+  					<option value="15" >ASCOM</option>
+  					<option value="16" >PROCURADORIA JURÍDICA</option>
+  					<option value="17" >AUDITORIA INTERNA</option>
+  					<option value="18" >COMISSÃO ESPECIAL DE LICITAÇÃO – CEL</option>
+  					<option value="19" >COMISSÃO PERMANENTE DE LICITAÇÃO</option>
+  					<option value="20" >COMISSÃO PERMANENTE DO PESSOAL DOCENTE</option>
+  					<option value="21" >PRÓ-REITORIA DE ADMINISTRAÇÃO E RECURSOS HUMANOS – PRAD</option>
+
+				</select>
+		<table>
+			<tr>
+				<td>
+
+			<label>Função:</label>
+					
+				<select class="" name="id_funcao" type="text" >
+
+						<option value="1" >Segurança 7:00 - 19:00</option>
+  						<option value="2" >Segurança 19:00 - 7:00</option>
+  						<option value="3" >Limpeza 6:00 - 14:00</option>
+  						<option value="4" >Limpeza 8:00 - 16:00</option>
+  						<option value="5" >Limpeza 14:00 - 22:00</option>
+  						<option value="6" >Administrativo 7:30 - 13:30</option>
+
+					</select>
+
+				</td>
+
+				<td>
+
+			<label>Empresa:</label>
+				
+				<select class="" name="id_emp" type="text" >
+
+					<option value="1" >LIMPEL</option>
+  					<option value="2" >SERVI-SAN</option>
+
+				</select>			
+
+				</td>
 
 
 
-		<center><label>Função:</label>
-		<select name="id_funcao" type="text" >
-			<option value="1" >Segurança 7:00 - 19:00</option>
-  			<option value="2">Segurança 19:00 - 7:00</option>
-  			<option value="3">Limpeza 6:00 - 14:00</option>
-  			<option value="4">Limpeza 8:00 - 16:00</option>
-  			<option value="5">Limpeza 14:00 - 22:00</option>
-  			<option value="6">Administrativo 7:30 - 13:30</option>
 
-
-		</select>
-
+			</tr>
+		</table>
 		<br>
+
 		<label>Horas semanais de trabalho:</label>
-		<select name="id_carga_hrs" type="text" >
-			<option value="1">40 Hrs semanais</option>
-  			<option value="2">48 Hrs semanais</option>
-  			<option value="3">30 Hrs semanais</option>
+
+			<select class="" name="id_carga_hrs" type="text" >
+				
+				<option value="1" >40 Hrs semanais</option>
+  				<option value="2" >48 Hrs semanais</option>
+  				<option value="3" >30 Hrs semanais</option>
 
 		</select><br>	
 

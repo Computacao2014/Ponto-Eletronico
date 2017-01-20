@@ -67,6 +67,7 @@ li a:hover {
 
   <li><a class="active" href="painelgerentegeral.php">Página Gerente Geral</a></li>
   <li><a href="cadastroGerenteSetor.php">Cadastrar Gerente Setor</a></li>
+  <li><a href="listargsetor.php">Listar Gerente Setor</a></li>
   <li><a href="testeread.php">Listar Funcionários Geral</a></li>
   <li><a href="logout.php">Sair</a></li>
 </ul>

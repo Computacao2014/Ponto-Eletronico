@@ -82,8 +82,8 @@ input:hover{
                
         <li><form method='post' action="readgsetor.php">
             <input type="hidden" name="id_setor" value="<?= $_SESSION['id_setor']?>">
-            <input type="submit" Value='Listar Funcionários do setor'>    
-        </form></li>
+            <input type="submit" Value='Listar Funcionários do Setor'>    
+        </form></li>li>
 
         <li><a href="logout.php">Sair</a></li>
 </ul>
