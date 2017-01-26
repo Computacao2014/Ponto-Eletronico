@@ -1,5 +1,14 @@
 <?php 
-$cpf = $_POST['cpf'];
+session_start();
+ 	if (!isset($_SESSION["cpf"]) || !isset($_SESSION["senha"])) {
+ 		header("Location: loginFuncionario.php");
+ 		exit;
+ 	}else
+ 	{
+ 		
+ 	}
+
+$cpf = $_SESSION['cpf'];
 
 $host = "localhost";
 $user = "root";
@@ -69,15 +78,9 @@ $sql = mysqli_query($conexao, "SELECT * FROM tabelaponto WHERE id_funcionario = 
   <ul>
 
         <li><a class="active" href="painelfuncionario.php">Página Funcionário</a></li>
-
-        <li><form method='post' action="testecheckin.php">
-            <input type="hidden" name="cpf" value="<?= $_POST['cpf']?>">
-            <input type="submit" Value='Bater Ponto'>    
-        </form></li>
-         <li><form method='post' action="relatoriofuncionario.php">
-            <input type="hidden" name="cpf" value="<?= $_POST['cpf']?>">
-            <input type="submit" Value='Relatório'>    
-        </form></li>
+        <li><a class="active" href="testecheckin.php">Bater Ponto</a></li>
+        <li><a class="active" href="#">Relatório de Pontos</a></li>
+        <li><a class="active" href="exibirEscalaFunc.php">Exibir Escala Funcionário</a></li>
         <li><a href="logout.php">Sair</a></li>
 </ul>
 	<center>

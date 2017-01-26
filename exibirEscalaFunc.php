@@ -1,7 +1,16 @@
 <?php 
 include("GerenteGeral.php");
 
-$cpf=$_POST['cpf'];
+session_start();
+  if (!isset($_SESSION["cpf"]) || !isset($_SESSION["senha"])) {
+    header("Location: loginFuncionario.php");
+    exit;
+  }else
+  {
+    
+  }
+
+$cpf=$_SESSION['cpf'];
 function readGerente($cpf){
 $host = "localhost";
 $user = "root";
@@ -56,7 +65,22 @@ input[type=submit]{
 input:hover{
     background-color: #111;
     
-}    
+}
+td[id='sim']{
+  background-color: green;
+  color: white;
+  border-radius: 3px;
+}
+td[id='nao']{
+  background-color: red;
+  color: white;
+  border-radius: 3px;
+}
+td{
+  background-color: #333;
+  color: white;
+  border-radius: 3px;
+}     
 </style>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
 </head>
@@ -64,26 +88,16 @@ input:hover{
 
 
 <body>
-        <br>
+        
 <img src="imagens/logouespi.png">
 <br><br>
 
 <ul>
 
         <li><a class="active" href="painelfuncionario.php">Página Funcionário</a></li>
-
-        <li><form method='post' action="testecheckin.php">
-            <input type="hidden" name="cpf" value="<?= $_POST['cpf']?>">
-            <input type="submit" Value='Bater Ponto'>    
-        </form></li>
-         <li><form method='post' action="relatoriofuncionario.php">
-            <input type="hidden" name="cpf" value="<?= $_POST['cpf']?>">
-            <input type="submit" Value='Relatório'>    
-        </form></li>
-        <li><form method='post' action="#">
-            <input type="hidden" name="cpf" value="<?= $_POST['cpf']?>">
-            <input type="submit" Value='Exibir Escala Funcionário'>    
-        </form></li>
+        <li><a class="active" href="testecheckin.php">Bater Ponto</a></li>
+        <li><a class="active" href="relatoriofuncionario.php">Relatório de Pontos</a></li>
+        <li><a class="active" href="#">Exibir Escala Funcionário</a></li>
         <li><a href="logout.php">Sair</a></li>
 </ul>
 
@@ -101,29 +115,25 @@ input:hover{
 <table id="t01" class='table-condensed'>
         
 
-      <tr>
+      <tr id='1'>
           <td>Nome: </td>
           <td><?=$result[0]?></td>      
         </tr>
 
-        <tr>
+        <tr id='1'>
           <td>Cpf: </td>
           <td><?=$result[1]?></td>      
         </tr>
 
-      <tr>
-        <td>Dia da Semana</td>
-        <td>Ativo</td>      
-      </tr>
+     
 
       <tr>
         <td>Segunda-feira</td>
-        <td><?php  
-        if ($result[8])
-          echo "Sim";
-        else
-          echo "Não";
-        ?></td>
+        <?php  if ($result[6]){ ?>
+         <td id='sim'><?php echo "Sim"; ?></td> 
+          <?php } else{?>
+          <td id ='nao'><?php echo "Não"; ?>  </td>
+          <?php } ?>
         
 
             
@@ -131,67 +141,68 @@ input:hover{
 
        <tr>
         <td>Terça-feira</td>
-        <td><?php  
-        if ($result[9])
-          echo "Sim";
-        else
-          echo "Não";
-        ?></td>
+        <?php  if ($result[7]){ ?>
+         <td id='sim'><?php echo "Sim"; ?></td> 
+          <?php } else{?>
+          <td id ='nao'><?php echo "Não"; ?>  </td>
+          <?php } ?>
           
       </tr>
 
       <tr>
         <td>Quarta-feira</td>
-        <td><?php  
-        if ($result[10])
-          echo "Sim";
-        else
-          echo "Não";
-        ?></td>
+        <?php  if ($result[8]){ ?>
+         <td id='sim'><?php echo "Sim"; ?></td> 
+          <?php } else{?>
+          <td id ='nao'><?php echo "Não"; ?>  </td>
+          <?php } ?>
           
       </tr>
 
       <tr>
         <td>Quinta-feira</td>
-        <td><?php  
-        if ($result[11])
-          echo "Sim";
-        else
-          echo "Não";
-        ?></td>
+        <?php  if ($result[9]){ ?>
+         <td id='sim'><?php echo "Sim"; ?></td> 
+          <?php } else{?>
+          <td id ='nao'><?php echo "Não"; ?>  </td>
+          <?php } ?>
            
       </tr>
 
       <tr>
         <td>Sexta-feira</td>
-        <td><?php  
-        if ($result[12])
-          echo "Sim";
-        else
-          echo "Não";
-        ?></td>
+        <?php  if ($result[10]){ ?>
+         <td id='sim'><?php echo "Sim"; ?></td> 
+          <?php } else{?>
+          <td id ='nao'><?php echo "Não"; ?>  </td>
+          <?php } ?>
          
       </tr>
 
       <tr>
         <td>Sábado</td>
-        <td><?php  
-        if ($result[13])
-          echo "Sim";
-        else
-          echo "Não";
-        ?></td>
+        
+
+        <?php  if ($result[11]){ ?>
+         <td id='sim'><?php echo "Sim"; ?></td> 
+          <?php } else{?>
+          <td id ='nao'><?php echo "Não"; ?>  </td>
+          <?php } ?>
+        
           
       </tr>
 
+     
+
       <tr>
         <td>Domingo</td>
-        <td><?php  
-        if ($result[14])
-          echo "Sim";
-        else
-          echo "Não";
-        ?></td>
+       
+        <?php  if ($result[12]){ ?>
+         <td id='sim'><?php echo "Sim"; ?></td> 
+          <?php } else{?>
+          <td id ='nao'><?php echo "Não"; ?>  </td>
+          <?php } ?>
+        </td>
           
       </tr>
 

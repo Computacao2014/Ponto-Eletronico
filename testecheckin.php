@@ -10,9 +10,16 @@
 
  ?>
 <?php 
+	session_start();
+ 	if (!isset($_SESSION["cpf"]) || !isset($_SESSION["senha"])) {
+ 		header("Location: loginFuncionario.php");
+ 		exit;
+ 	}else
+ 	{
+ 		
+ 	}
 	
-	
- 		$cpf = $_POST['cpf'];
+ 		$cpf = $_SESSION['cpf'];
  	
  ?>
 <html>
@@ -48,12 +55,7 @@ li a:hover {
 }
 	
 		
-		img {	
-			border: 1px solid #ddd;
-    		border-radius: 4px;
-    		padding: 5px;
-    		 
-		}
+		
 		input[type=submit]{
 		    background-color: #333;
 		    color: white  ;
@@ -72,7 +74,7 @@ li a:hover {
     </head>
 
     <body>
-        <br>
+        
             <img src="imagens/logouespi.png">
         <br><br>
 
@@ -86,12 +88,9 @@ li a:hover {
 	<ul>
 
         <li><a class="active" href="painelfuncionario.php">Página Funcionário</a></li>
-        <li><a href="#">Bater Ponto</a></li>
-        </form></li>
-         <li><form method='post' action="relatoriofuncionario.php">
-            <input type="hidden" name="cpf" value="<?= $_POST['cpf']?>">
-            <input type="submit" Value='Relatório'>    
-        </form></li>
+        <li><a class="active" href="#">Bater Ponto</a></li>
+        <li><a class="active" href="relatoriofuncionario.php">Relatório de Pontos</a></li>
+        <li><a class="active" href="exibirEscalaFunc.php">Exibir Escala Funcionário</a></li>
         <li><a href="logout.php">Sair</a></li>
 	</ul>
 

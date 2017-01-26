@@ -1,7 +1,18 @@
 <?php 
 include("GerenteGeral.php");
 
-$setor=$_POST['id_setor'];
+session_start();
+  if (!isset($_SESSION["matricula"]) || !isset($_SESSION["senha"])) {
+    header("Location: index.php");
+    exit;
+  }else
+  {
+    
+  }
+
+$setor=$_SESSION['id_setor'];
+
+
 $host = "localhost";
 $user = "root";
 $pass = "php2016";
@@ -48,7 +59,7 @@ li a:hover {
 
 
 <body>
-<br>
+
 <img src="imagens/logouespi.png">
 <br><br>
 

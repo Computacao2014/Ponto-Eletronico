@@ -1,6 +1,14 @@
 <?php 
 $semana = array(0,0,0,0,0,0,0);
-
+session_start();
+ 	if (!isset($_SESSION["matricula"]) || !isset($_SESSION["senha"])) {
+ 		header("Location: index.php");
+ 		exit;
+ 	}else
+ 	{
+ 		
+ 	}
+ 	
  ?>
 <html>
 <head>
@@ -51,7 +59,7 @@ $semana = array(0,0,0,0,0,0,0);
 
 
 	<body>
-		<br>
+		
 			<img src="imagens/logouespi.png">
 		<br><br>
 

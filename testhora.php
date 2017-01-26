@@ -1,3 +1,9 @@
+<script type="text/javascript">
+function exibeAlerta(){
+	alert("nilson corno");
+}
+
+</script>
 <?php 
 $host = "localhost";
 $user = "root";
@@ -24,9 +30,11 @@ mysqli_select_db($conexao , $banco) or die("erro no banco");
 	
 	
 	if($opcao == '1'){
+		echo "<script type=\"text/javascript\"> alert(\"fsfsdf\"); 
+		</script>";
+
 		$sql = mysqli_query($conexao,"INSERT INTO tabelaponto(pontoentrada,pontosaida,data,id_funcionario, jornadacomprida)
 		VALUES('$hora' , 0 , '$data' , '$cpf', 0)");
-		
 	}elseif($opcao == '0'){
 
 		$sql = mysqli_query($conexao,"SELECT * FROM tabelaponto WHERE id_funcionario = '$cpf' and data = '$data'");

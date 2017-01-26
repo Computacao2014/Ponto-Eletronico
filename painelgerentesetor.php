@@ -66,7 +66,7 @@ input:hover{
     </head>
 
     <body>
-        <br>
+        
             <img src="imagens/logouespi.png">
         <br><br>
 
@@ -79,11 +79,8 @@ input:hover{
 
   <li><a class="active" href="painelgerentesetor.php">Página Gerente Setor</a></li>
         <li><a href="cadastrofuncinario.php">Cadastrar Funcionário</a></li>
-               
-        <li><form method='post' action="readgsetor.php">
-            <input type="hidden" name="id_setor" value="<?= $_SESSION['id_setor']?>">
-            <input type="submit" Value='Listar Funcionários do Setor'>    
-        </form></li>li>
+        <li><a href="readgsetor.php">Listar Funcionários Setor</a></li>        
+        
 
         <li><a href="logout.php">Sair</a></li>
 </ul>

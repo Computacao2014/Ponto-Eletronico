@@ -65,7 +65,7 @@ input:hover{
     </head>
 
     <body>
-        <br>
+        
             <img src="imagens/logouespi.png">
         <br><br>
 
@@ -76,20 +76,12 @@ input:hover{
 
 <ul>
 
-        <li><a class="active" href="painelfuncionario.php">Página Funcionário</a></li>
+        
 
-        <li><form method='post' action="testecheckin.php">
-            <input type="hidden" name="cpf" value="<?= $_SESSION['cpf']?>">
-            <input type="submit" Value='Bater Ponto'>    
-        </form></li>
-         <li><form method='post' action="relatoriofuncionario.php">
-            <input type="hidden" name="cpf" value="<?= $_SESSION['cpf']?>">
-            <input type="submit" Value='Relatório'>    
-        </form></li>
-        <li><form method='post' action="exibirEscalaFunc.php">
-            <input type="hidden" name="cpf" value="<?= $_SESSION['cpf']?>">
-            <input type="submit" Value='Exibir Escala Funcionário'>    
-        </form></li>
+        <li><a class="active" href="painelfuncionario.php">Página Funcionário</a></li>
+        <li><a class="active" href="testecheckin.php">Bater Ponto</a></li>
+        <li><a class="active" href="relatoriofuncionario.php">Relatório de Pontos</a></li>
+        <li><a class="active" href="exibirEscalaFunc.php">Exibir Escala Funcionário</a></li>
         <li><a href="logout.php">Sair</a></li>
 </ul>
 

@@ -1,5 +1,5 @@
 <?php
-require 'C:\wamp64\www\TestesPhp\PHPMailer\PHPMailerAutoload.php';
+require 'C:\wamp64\www\19012017\PHPMailer\PHPMailerAutoload.php';
 $host = "localhost";
 $user = "root";
 $pass = "php2016";

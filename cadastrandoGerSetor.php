@@ -20,7 +20,26 @@ $gerentesetor->id_setor = $_POST['id_setor'];
 
 $gerentesetor->createGerente();
 
-header("Location: painelgerentegeral.php");
+if($gerentesetor->sql == 0){
+
+echo " >
+		<script type=\"text/javascript\">
+			setTimeout(\"window.location='listargsetor.php'\",0);
+			alert(\"Matrícula já cadastrada.\");
+		</script>";	
+
+}
+
+else{
+	echo " >
+			<script type=\"text/javascript\">
+			setTimeout(\"window.location='listargsetor.php'\",0);
+				alert(\"Gerente de Setor cadastrado com sucesso.\");
+			</script>";	
+}
+
+
+//header("Location: painelgerentegeral.php");
  		exit;
 ?>
 </body>
