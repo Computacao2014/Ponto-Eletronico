@@ -1,3 +1,22 @@
+<?php 
+session_start();
+ 	if (!isset($_SESSION["matricula"]) || !isset($_SESSION["senha"])) {
+ 		header("Location: loginGGeral.php");
+ 		exit;
+ 	}else
+ 	{
+ 		
+ 	}
+
+$host = "localhost";
+$user = "root";
+$pass = "php2016";
+$banco = "pontoeletronico";
+$conexao = mysqli_connect($host , $user , $pass) or die(mysql_error());
+mysqli_select_db($conexao , $banco) or die("erro no banco");
+
+ ?>
+
 <html>
 	<head>
 		<style>
@@ -45,7 +64,7 @@
 
 
 	<body>
-		<br>
+		
 			<img src="imagens/logouespi.png">
 		<br><br>
 
@@ -69,30 +88,19 @@
 				<input pattern="^[0-9]{1,15}$" type="text" placeholder="Telefone" name="telefone">
 				<input type="text" name="matricula" placeholder="Matrícula" required="">
 				
-				<select class="" name="id_setor" type="text" >
-					
-  					<option value="1">PRÓ-REITORIA DE EXTENSÃO, ASSUNTOS ESTUDANTIS E COMUNITÁRIOS - PREX</option>
-  					<option value="2">PRÓ-REITORIA DE PESQUISA E PÓS-GRADUAÇÃO - PROP</option>
-  					<option value="3" >REITORIA</option>
-  					<option value="4">PRÓ-REITORIA DE ENSINO E GRADUAÇÃO - PREG</option>
-  					<option value="5">PRÓ – REITORIA DE PLANEJAMENTO E ORÇAMENTO - PROPLAN</option>
-  					<option value="6">NÚCLEO DE CONCURSOS E PROMOÇÃO DE EVENTOS – NUCEPE</option>
-  					<option value="7">DIREÇÃO DE CENTRO DE CIÊNCIAS DA SAÚDE - CCS</option>
-  					<option value="8">DIREÇÃO DE CENTRO DE CIÊNCIAS DA NATUREZA - CCN</option>
-  					<option value="9">DIREÇÃO DE CENTRO DE CIÊNCIAS SOCIAIS E APLICADAS - CCSA</option>
-  					<option value="10">DIREÇÃO DE CENTRO DE CIÊNCIAS HUMANAS E LETRAS - CCHL</option>
-  					<option value="11" >DIREÇÃO DE CENTRO DE TECNOLOGIA E URBANISMO - CTU</option>
-  					<option value="12" >DIREÇÃO DE CENTRO DE CIÊNCIAS DA EDUCAÇÃO COMUNICAÇÃO E ARTES - CCECA</option>
-  					<option value="13" >PREFEITURA UNIVERSITÁRIA</option>
-  					<option value="14" >GRÁFICA E EDITORA</option>
-  					<option value="15" >ASCOM</option>
-  					<option value="16" >PROCURADORIA JURÍDICA</option>
-  					<option value="17" >AUDITORIA INTERNA</option>
-  					<option value="18" >COMISSÃO ESPECIAL DE LICITAÇÃO – CEL</option>
-  					<option value="19" >COMISSÃO PERMANENTE DE LICITAÇÃO</option>
-  					<option value="20" >COMISSÃO PERMANENTE DO PESSOAL DOCENTE</option>
-  					<option value="21" >PRÓ-REITORIA DE ADMINISTRAÇÃO E RECURSOS HUMANOS – PRAD</option>
+				<?php 
 
+				$sql = mysqli_query($conexao,"SELECT nome_setor,id_setor FROM setor WHERE status = 0") or die("Usuário não encontrado");
+ 				
+ 				?>
+				<select class="" name="id_setor" type="text" >
+
+					<?php while($fetch = mysqli_fetch_row($sql)){ ?>
+        
+        
+					    <option value="<?= $fetch[1] ?>"><?= $fetch[0] ?></option>
+					<?php }?>	
+					
 				</select>
 
 

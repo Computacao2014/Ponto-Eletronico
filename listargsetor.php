@@ -1,4 +1,12 @@
 <?php 
+session_start();
+  if (!isset($_SESSION["matricula"]) || !isset($_SESSION["senha"])) {
+    header("Location: loginGGeral.php");
+    exit;
+  }else
+  {
+    
+  }
 
 include("GerenteGeral.php");
 
@@ -49,7 +57,7 @@ li a:hover {
 
 
 <body>
-<br>
+
 <img src="imagens/logouespi.png">
 <br><br>
 
@@ -95,7 +103,7 @@ li a:hover {
           <input type='hidden' name='matricula' value='<?= $fetch[5] ?>'>
           <input type='hidden' name='nome' value='<?= $fetch[0] ?>'>
 
-          <input type='hidden' name='id_setor' value='<?= $fetch[9] ?>'>
+          <input type='hidden' name='id_setor' value='<?= $fetch[8] ?>'>
 
           <input class="btn btn-danger" type='submit' value='Deletar'>
 
@@ -107,7 +115,7 @@ li a:hover {
 
           <input type='hidden' name='nome' value='<?= $fetch[0] ?>'>
 
-          <input type='hidden' name='id_setor' value='<?= $fetch[9] ?>'>
+          <input type='hidden' name='id_setor' value='<?= $fetch[8] ?>'>
 
           <input class='btn btn-success' type='submit' value='Editar'>
           

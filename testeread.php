@@ -1,4 +1,13 @@
 <?php 
+session_start();
+  if (!isset($_SESSION["matricula"]) || !isset($_SESSION["senha"])) {
+    header("Location: loginGGeral.php");
+    exit;
+  }else
+  {
+    
+  }
+
 include("GerenteGeral.php");
 
 $host = "localhost";
@@ -48,7 +57,7 @@ li a:hover {
 
 
 <body>
-<br>
+
 <img src="imagens/logouespi.png">
 <br><br>
 

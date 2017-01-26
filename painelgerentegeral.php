@@ -54,7 +54,7 @@ li a:hover {
 
 
   <body>
-    <br>
+    
       <img src="imagens/logouespi.png">
     <br><br>
 
@@ -65,7 +65,7 @@ li a:hover {
 
 <ul>
 
-  <li><a class="active" href="painelgerentegeral.php">Página Gerente Geral</a></li>
+  <li><a href="painelgerentegeral.php">Página Gerente Geral</a></li>
   <li><a href="cadastroGerenteSetor.php">Cadastrar Gerente Setor</a></li>
   <li><a href="listargsetor.php">Listar Gerente Setor</a></li>
   <li><a href="testeread.php">Listar Funcionários Geral</a></li>
