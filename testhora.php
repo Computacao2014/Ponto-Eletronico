@@ -25,31 +25,71 @@ mysqli_select_db($conexao , $banco) or die("erro no banco");
 	date_default_timezone_set('America/Sao_Paulo');
 	$hora = retornaMinutos(date('H:i'));
 	$opcao = $_POST['op'];
-	$data = date("d/m/Y");
+	$data = date("Y-M-D");
 	$cpf = $_POST['cpf'];
 	
 	
 	if($opcao == '1'){
-		echo "<script type=\"text/javascript\"> alert(\"fsfsdf\"); 
-		</script>";
 
-		$sql = mysqli_query($conexao,"INSERT INTO tabelaponto(pontoentrada,pontosaida,data,id_funcionario, jornadacomprida)
-		VALUES('$hora' , 0 , '$data' , '$cpf', 0)");
-	}elseif($opcao == '0'){
-
-		$sql = mysqli_query($conexao,"SELECT * FROM tabelaponto WHERE id_funcionario = '$cpf' and data = '$data'");
+		$sql = mysqli_query($conexao,"SELECT * FROM tabelaponto WHERE id_funcionario = '$cpf' and data = CURDATE()");
 		$fetch = mysqli_fetch_row($sql);
-		if($fetch[1] == 0){
-			$sql = "UPDATE tabelaponto SET pontosaida ='$hora', jornadacomprida = '$hora' - pontoentrada WHERE id_funcionario= '$cpf' AND data = '$data'";
-			mysqli_query($conexao,$sql);
-		}else{
+
+		if(is_null($fetch[0] )){
+
+			$sql = mysqli_query($conexao,"INSERT INTO tabelaponto(pontoentrada,pontosaida,data,id_funcionario, jornadacomprida)
+		VALUES('$hora' , 0 , CURSDATE() , '$cpf', 0)");
+
+			echo "
+				
+				<script type=\"text/javascript\">
+					setTimeout(\"window.location='painelfuncionario.php'\",0);
+					alert(\"Entrada Registrada com sucesso.\");
+				</script>
+			";
+
+		}
+
+		elseif ($fetch[0] != 0) {
+
+			echo "
+				
+				<script type=\"text/javascript\">
+					setTimeout(\"window.location='painelfuncionario.php'\",0);
+					alert(\"Entrada JÁ Registrada.\");
+				</script>
+			";	
+
+
+		}
+
+		else{
 			
 		}
 
+	
+	}elseif($opcao == '0'){
+
+		$sql = mysqli_query($conexao,"SELECT * FROM tabelaponto WHERE id_funcionario = '$cpf' and data = CURDATE()");
+		$fetch = mysqli_fetch_row($sql);
 		
+		if($fetch[1] == 0){
+			$sql = "UPDATE tabelaponto SET pontosaida ='$hora', jornadacomprida = '$hora' - pontoentrada WHERE id_funcionario= '$cpf' AND data = CURDATE()";
+			mysqli_query($conexao,$sql);
+
+
+		}else{
+
+		}
+		echo "
+				
+				<script type=\"text/javascript\">
+				setTimeout(\"window.location='painelfuncionario.php'\",0);
+					alert(\"Saída Registrada Com Sucesso.\");
+				</script>
+			";
 		
 	}
 	
-	header("Location: painelfuncionario.php");
- 		exit;
+
+
  ?>	
