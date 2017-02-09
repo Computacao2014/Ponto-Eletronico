@@ -28,12 +28,13 @@ mysqli_select_db($conexao , $banco) or die("erro no banco");
 	$sql = mysqli_query($conexao,"SELECT * FROM tabelafuncionario WHERE cpf = '$cpf' and senha = '$senha'") or die("usuario n encontrado");
 	//$sql = "SELECT * FROM gerentegeral WHERE cpf = '$cpf' and senha = '$senha'";
 	$rows = mysqli_num_rows($sql);
+	$fetch = mysqli_fetch_row($sql);
 
 	if($rows > 0){
 		session_start();
 		$_SESSION['cpf'] = $_POST['cpf'];
 		$_SESSION['senha'] = $_POST['senha'];
-		
+		$_SESSION['nome'] = $fetch[0];
 		echo "<script>loginsuccessfully()</script>";
 	
 	}

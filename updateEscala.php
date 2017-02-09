@@ -1,11 +1,5 @@
 <?php 
-$segunda = $_POST['segunda'];
-$terca = $_POST['terca'];
-$quarta = $_POST['quarta'];
-$quinta = $_POST['quinta'];
-$sexta = $_POST['sexta'];
-$sabado = $_POST['sabado'];
-$domingo = $_POST['domingo'];
+
 
 $cpf_old = $_POST['cpf_old'];
 

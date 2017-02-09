@@ -58,6 +58,12 @@ input:hover{
     background-color: #111;
     
 }    
+ul label[id='1']{
+    color: white;
+    padding-left: 400px;
+    padding-top: 15px;
+    text-decoration: underline;
+}
 </style>
 
 
@@ -83,7 +89,9 @@ input:hover{
         <li><a class="active" href="relatoriofuncionario.php">Relatório de Pontos</a></li>
         <li><a class="active" href="exibirEscalaFunc.php">Exibir Escala Funcionário</a></li>
         <li><a href="logout.php">Sair</a></li>
+        
+        <label id='1'><?php  echo "Seja Bem Vindo, ".$_SESSION['nome']; ?></label>
 </ul>
-
+    
 </body>
 </html>

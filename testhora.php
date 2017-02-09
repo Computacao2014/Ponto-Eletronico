@@ -1,9 +1,4 @@
-<script type="text/javascript">
-function exibeAlerta(){
-	alert("nilson corno");
-}
 
-</script>
 <?php 
 $host = "localhost";
 $user = "root";
@@ -36,8 +31,8 @@ mysqli_select_db($conexao , $banco) or die("erro no banco");
 
 		if(is_null($fetch[0] )){
 
-			$sql = mysqli_query($conexao,"INSERT INTO tabelaponto(pontoentrada,pontosaida,data,id_funcionario, jornadacomprida)
-		VALUES('$hora' , 0 , CURSDATE() , '$cpf', 0)");
+			$sql = mysqli_query($conexao,"INSERT INTO tabelaponto
+		VALUES('$hora' , 0 , CURDATE() , '$cpf', 0,0)");
 
 			echo "
 				

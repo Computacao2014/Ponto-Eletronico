@@ -29,7 +29,7 @@ $sql = mysqli_query($conexao, "SELECT * FROM tabelaponto WHERE id_funcionario = 
  		th{
  			background-color: #333;
  			color: white;
- 			width: 200px;
+ 			width: 150px;
  			border-radius: 2px;
  		}
  		ul {
@@ -57,16 +57,25 @@ $sql = mysqli_query($conexao, "SELECT * FROM tabelaponto WHERE id_funcionario = 
 		li a:hover {
 		    background-color: #111;
 		}
-		input[type=submit]{
-		    background-color: #333;
-		    color: white  ;
-		    border-color: #333;
-		    padding: 14px 16px;
-		    }
-		input:hover{
-		    background-color: #111;
-		    
-		}    
+		
+		td[id='sim']{
+		  background-color: red;
+		  color: white;
+		  border-radius: 3px;
+		}
+		td[id='nao']{
+		  background-color: green;
+		  color: white;
+		  border-radius: 3px;
+		}
+		input[id='btJust'] {
+			background-color: #333;
+			width: 150px;
+			border-radius: 3px;
+			color: white;
+
+		} 
+		 
 
  	</style>
  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
@@ -90,6 +99,7 @@ $sql = mysqli_query($conexao, "SELECT * FROM tabelaponto WHERE id_funcionario = 
     <th>Ponto Saída</th> 
     <th>Data</th>
     <th>Jornada Cumprida</th>
+    <th>Falta</th>
   </tr>
   <?php while($fetch = mysqli_fetch_row($sql)){ ?>
         
@@ -99,7 +109,18 @@ $sql = mysqli_query($conexao, "SELECT * FROM tabelaponto WHERE id_funcionario = 
     		<td><?= $fetch[1] ?></td>
     		<td><?= $fetch[2] ?></td>
     		<td><?= $fetch[4] ?></td>
-       
+
+    		<?php  if ($fetch[5]){ ?>
+	          <td id='sim'><?php echo "Sim"; ?></td>
+	           <td><form method="post" action="justificativa.php">
+					<input type='hidden' value='<?= $fetch[2] ?>' name='data'>
+					<input id='btJust' type="submit" value='Justificar'>
+				</form></td> 
+	          <?php } else{?>
+	          <td id ='nao'><?php echo "Não"; ?>  </td>
+	         <?php } ?>
+
+       		
 
   		  </tr>
 

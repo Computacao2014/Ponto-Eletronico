@@ -8,7 +8,7 @@ session_start();
  	{
  		
  	}
- 	
+ 	$setor = $_SESSION['id_setor'];
  ?>
 <html>
 <head>
@@ -89,34 +89,9 @@ session_start();
 		
 		<input pattern="^[0-9]{1,15}$" type="text" placeholder="Telefone" name="telefone">
 
+		<input type='hidden' name='id_setor' value='<?= $setor ?>'>	
 		
-		<label>Nome Setor:</label>
 		
-			<select class="" name="id_setor" type="text" >
-					
-  					<option value="1">PRÓ-REITORIA DE EXTENSÃO, ASSUNTOS ESTUDANTIS E COMUNITÁRIOS - PREX</option>
-  					<option value="2">PRÓ-REITORIA DE PESQUISA E PÓS-GRADUAÇÃO - PROP</option>
-  					<option value="3" >REITORIA</option>
-  					<option value="4">PRÓ-REITORIA DE ENSINO E GRADUAÇÃO - PREG</option>
-  					<option value="5">PRÓ – REITORIA DE PLANEJAMENTO E ORÇAMENTO - PROPLAN</option>
-  					<option value="6">NÚCLEO DE CONCURSOS E PROMOÇÃO DE EVENTOS – NUCEPE</option>
-  					<option value="7">DIREÇÃO DE CENTRO DE CIÊNCIAS DA SAÚDE - CCS</option>
-  					<option value="8">DIREÇÃO DE CENTRO DE CIÊNCIAS DA NATUREZA - CCN</option>
-  					<option value="9">DIREÇÃO DE CENTRO DE CIÊNCIAS SOCIAIS E APLICADAS - CCSA</option>
-  					<option value="10">DIREÇÃO DE CENTRO DE CIÊNCIAS HUMANAS E LETRAS - CCHL</option>
-  					<option value="11" >DIREÇÃO DE CENTRO DE TECNOLOGIA E URBANISMO - CTU</option>
-  					<option value="12" >DIREÇÃO DE CENTRO DE CIÊNCIAS DA EDUCAÇÃO COMUNICAÇÃO E ARTES - CCECA</option>
-  					<option value="13" >PREFEITURA UNIVERSITÁRIA</option>
-  					<option value="14" >GRÁFICA E EDITORA</option>
-  					<option value="15" >ASCOM</option>
-  					<option value="16" >PROCURADORIA JURÍDICA</option>
-  					<option value="17" >AUDITORIA INTERNA</option>
-  					<option value="18" >COMISSÃO ESPECIAL DE LICITAÇÃO – CEL</option>
-  					<option value="19" >COMISSÃO PERMANENTE DE LICITAÇÃO</option>
-  					<option value="20" >COMISSÃO PERMANENTE DO PESSOAL DOCENTE</option>
-  					<option value="21" >PRÓ-REITORIA DE ADMINISTRAÇÃO E RECURSOS HUMANOS – PRAD</option>
-
-				</select>
 		<table>
 			<tr>
 				<td>
